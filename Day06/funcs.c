@@ -18,7 +18,7 @@ void flipbit(uint32_t* mask, unsigned bit){
 }
 
 int checkbit(uint32_t mask, unsigned bit){
-    return !!(mask | (1 << bit));
+    return !!(mask & (1 << bit));
 }
 
 void printmask(uint32_t mask){
@@ -29,8 +29,9 @@ void printmask(uint32_t mask){
 }
 
 int main(){
-    int m = 0;
+    uint32_t m = 0;
     setbit(&m, 4);
-    
+    setbit(&m, 5);
+    printmask(m);
     return 0;
 }
