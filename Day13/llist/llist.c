@@ -107,7 +107,7 @@ void deleteNth(node_t** list, size_t n){
     if (*list == NULL){
         return;
     }
-    if (n == 0){
+    if (0 == n){
         node_t* temp = *list;
         *list = (*list)->next;
         free(temp);
@@ -115,6 +115,7 @@ void deleteNth(node_t** list, size_t n){
     }
     node_t* current = *list;
     node_t* prev = current;
+    // n steps
     while (current && n--) {
         prev = current;
         current = current->next;
